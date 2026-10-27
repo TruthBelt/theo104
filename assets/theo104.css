@@ -271,3 +271,12 @@ h3.grp { margin: 28px 0 12px; font-size: 1.2rem; font-weight: 600; color: var(--
 .next-part a:hover { background: var(--tint); }
 .no-js .next-part { display: none; }
 @media (max-width: 640px) { .part-tabs { margin-bottom: 24px; } }
+
+/* Banner breadcrumb (inner pages): "THEO 104 › Module 2 › Essay Guide". THEO 104 becomes a home link once the home page lists modules. */
+.site-head .crumbs { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
+.site-head .crumbs strong { font-size: 18px; font-weight: 600; letter-spacing: 0.02em; }
+.site-head .crumbs .sep { color: #8FA0BF; }
+.site-head .crumbs a { color: #FFFFFF; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, 0.4); text-underline-offset: 4px; }
+.site-head .crumbs a:hover { text-decoration-color: #FFFFFF; }
+.site-head .crumbs [aria-current] { color: #C9D3E6; }
+.back-foot { margin: 0; padding: 0 0 56px; font-size: 16px; }
