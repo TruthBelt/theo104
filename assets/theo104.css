@@ -45,6 +45,7 @@ a:hover { color: var(--navy-dark); }
 .placeholder { padding: 28px; border: 1px dashed var(--rule-2); color: var(--muted); }
 .site-foot { border-top: 1px solid var(--rule); }
 .site-foot .wrap { padding-top: 24px; padding-bottom: 24px; font-size: 15px; color: var(--muted); }
+.site-foot .notice { margin: 6px 0 0; font-size: 13px; }
 
 /* Buttons */
 .btn { min-height: 44px; padding: 8px 18px; border: 1px solid var(--rule-2); background: var(--bg); color: var(--ink); font: inherit; font-size: 16px; cursor: pointer; }
