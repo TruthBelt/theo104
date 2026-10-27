@@ -373,6 +373,9 @@ h2, .viewer, .part-tabs, .part, [id] { scroll-margin-top: var(--head-h); }
 .mod { display: grid; grid-template-columns: 10rem minmax(0, 1fr) auto; align-items: baseline; gap: 4px 24px; padding: 18px 12px; }
 .mod .n { font-size: 15px; font-weight: 600; color: var(--red); }
 .mod .t { font-size: 1.15rem; font-weight: 600; color: var(--navy); }
+.mod .t .d { display: block; margin-top: 2px; font-size: 15px; font-weight: 400; color: var(--muted); }
+.home .hero p + p { margin-top: 12px; font-size: 1.05rem; color: var(--muted); }
+.home .block > .intro { max-width: 760px; margin: -8px 0 24px; color: var(--ink-2); }
 .mod .go { font-size: 15px; font-weight: 600; color: var(--navy); white-space: nowrap; }
 a.mod { text-decoration: none; }
 a.mod:hover { background: var(--tint); }
