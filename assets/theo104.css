@@ -280,3 +280,17 @@ h3.grp { margin: 28px 0 12px; font-size: 1.2rem; font-weight: 600; color: var(--
 .site-head .crumbs a:hover { text-decoration-color: #FFFFFF; }
 .site-head .crumbs [aria-current] { color: #C9D3E6; }
 .back-foot { margin: 0; padding: 0 0 56px; font-size: 16px; }
+
+/* Fixed banner (Kent, 10/27/2026): stays at the top while the page scrolls; one line on phones.
+   Anything the page scrolls to stops below it. */
+:root { --head-h: 74px; }
+.site-head { position: sticky; top: 0; z-index: 50; }
+h2, .viewer, .part-tabs, .part, [id] { scroll-margin-top: var(--head-h); }
+@media (max-width: 640px) {
+  :root { --head-h: 60px; }
+  .site-head .wrap { padding-top: 10px; padding-bottom: 10px; }
+  .site-head .who { display: none; }
+  .site-head .crumbs { flex-wrap: nowrap; white-space: nowrap; gap: 8px; font-size: 15px; }
+  .site-head .crumbs strong { font-size: 16px; }
+  .site-head .brand > span { display: none; }
+}
