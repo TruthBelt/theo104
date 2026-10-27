@@ -366,3 +366,21 @@ h2, .viewer, .part-tabs, .part, [id] { scroll-margin-top: var(--head-h); }
 .help-card .card-list li { margin: 4px 0; }
 .help-card .card-list b { color: var(--navy); }
 .guide .models { margin: 16px 0 0; max-width: 860px; color: var(--muted); }
+
+/* Home page */
+.mod-list { list-style: none; margin: 0; padding: 0; max-width: 960px; border-top: 1px solid var(--rule); }
+.mod-list li { border-bottom: 1px solid var(--rule); }
+.mod { display: grid; grid-template-columns: 10rem minmax(0, 1fr) auto; align-items: baseline; gap: 4px 24px; padding: 18px 12px; }
+.mod .n { font-size: 15px; font-weight: 600; color: var(--red); }
+.mod .t { font-size: 1.15rem; font-weight: 600; color: var(--navy); }
+.mod .go { font-size: 15px; font-weight: 600; color: var(--navy); white-space: nowrap; }
+a.mod { text-decoration: none; }
+a.mod:hover { background: var(--tint); }
+a.mod:hover .t { text-decoration: underline; text-underline-offset: 4px; }
+a.mod:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.mod.soon .n, .mod.soon .t, .mod.soon .go { color: var(--muted); font-weight: 400; }
+.guide-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; max-width: 960px; }
+@media (max-width: 640px) {
+  .mod { grid-template-columns: 1fr; padding: 14px 4px; }
+  .guide-cards { grid-template-columns: 1fr; }
+}
