@@ -359,3 +359,10 @@ h2, .viewer, .part-tabs, .part, [id] { scroll-margin-top: var(--head-h); }
   .ps19 .l { font-size: 15px; }
   .ps19-panels > .ps19-sky { background: radial-gradient(1.5px 1.5px at 93% 16%, #fff 99%, transparent), radial-gradient(1px 1px at 86% 8%, #fff 99%, transparent), radial-gradient(1px 1px at 97% 44%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 90% 88%, #fff 99%, transparent), linear-gradient(180deg, #071A38 0%, #0A254E 55%, #16397A 100%); }
 }
+
+/* Discussion cards on module pages (link to the shared Discussion Guide) */
+.help-card .when { font-size: 15px; color: var(--muted); margin-bottom: 8px; }
+.help-card .card-list { margin: 0 0 8px; padding-left: 22px; color: var(--ink-2); }
+.help-card .card-list li { margin: 4px 0; }
+.help-card .card-list b { color: var(--navy); }
+.guide .models { margin: 16px 0 0; max-width: 860px; color: var(--muted); }
