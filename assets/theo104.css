@@ -294,3 +294,37 @@ h2, .viewer, .part-tabs, .part, [id] { scroll-margin-top: var(--head-h); }
   .site-head .crumbs strong { font-size: 16px; }
   .site-head .brand > span { display: none; }
 }
+
+/* Check Yourself (check.js): one deck's questions at a time; a wrong choice is struck and the question stays open;
+   "Show answer" moves on. Without script every set shows and "Show answer" still opens. Nothing is saved. */
+.ck-intro { margin: -12px 0 20px; color: var(--muted); }
+.ck-tabs { margin: 0 0 28px; scroll-margin-top: var(--head-h); }
+.ck-tabs .deck-list { margin: 0; }
+.no-js .ck-tabs { display: none; }
+.js .ck-set { display: none; }
+.js .ck-set.active { display: block; }
+.ck-name { margin: 0 0 4px; font-size: 1.2rem; font-weight: 600; color: var(--navy); }
+.ck-list { max-width: 860px; margin: 0; padding: 0; list-style: none; counter-reset: ck; }
+.ck-q { counter-increment: ck; position: relative; padding: 22px 0 22px 34px; border-top: 1px solid var(--rule); }
+.ck-q::before { content: counter(ck); position: absolute; left: 0; top: 22px; font-weight: 600; color: var(--red); }
+.ck-stem { margin: 0 0 12px; font-weight: 600; color: var(--navy); line-height: 1.4; }
+.ck-opts { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.ck-opt { position: relative; width: 100%; min-height: 44px; padding: 10px 16px 10px 44px; border: 1px solid var(--rule-2); background: var(--bg); color: var(--ink); font: inherit; font-size: 16px; line-height: 1.35; text-align: left; cursor: pointer; }
+.ck-opt::before { content: ""; position: absolute; left: 16px; top: 50%; width: 14px; height: 14px; margin-top: -8px; border: 1px solid var(--rule-2); border-radius: 50%; }
+.ck-opt:hover { border-color: var(--navy); }
+.ck-opt:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.ck-opt[aria-disabled="true"] { cursor: default; }
+.ck-opt[aria-disabled="true"]:hover { border-color: var(--rule-2); }
+.ck-opt.wrong { border-style: dashed; color: var(--muted); text-decoration: line-through; }
+.ck-opt.wrong::before { content: "✕"; border: 0; width: auto; height: auto; margin-top: -0.7em; font-size: 15px; line-height: 1.4; text-decoration: none; }
+.ck-opt.right, .ck-opt.right:hover { border-color: var(--navy); background: var(--tint); color: var(--navy); font-weight: 600; }
+.ck-opt.right::before { content: "✓"; border: 0; width: auto; height: auto; margin-top: -0.7em; font-size: 16px; line-height: 1.4; }
+.ck-q.done .ck-opt:not(.right):not(.wrong) { color: var(--muted); }
+.ck-fb { margin: 10px 0 0; font-size: 16px; font-weight: 600; color: var(--navy); }
+.ck-fb:empty { margin: 0; }
+.ck-ans { margin-top: 6px; }
+.ck-ans summary { display: inline-flex; align-items: center; min-height: 44px; color: var(--navy); font-size: 15px; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.ck-ans p { margin: 4px 0 0; padding: 14px 18px; background: var(--tint); border-left: 4px solid var(--navy); font-size: 16px; line-height: 1.5; }
+.ck-ans b { color: var(--navy); }
+.js .ck-q.done .ck-ans summary { display: none; }
+@media (max-width: 640px) { .ck-q { padding-left: 26px; } }
