@@ -71,4 +71,6 @@
 
   var m = /^#deck-(\d+)$/.exec(location.hash);
   show(m ? parseInt(m[1], 10) - 1 : 0, 0);
+  // A #deck-n link lands on the deck heading, not wherever the hidden decks left the scroll.
+  if (m) setTimeout(function () { document.getElementById('decks-h').scrollIntoView(); }, 0);
 })();
