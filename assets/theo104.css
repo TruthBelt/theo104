@@ -171,7 +171,7 @@ a:hover { color: var(--navy-dark); }
 .deeper summary { cursor: pointer; font-size: 1.15rem; font-weight: 600; min-height: 28px; }
 .deeper .body { padding: 12px 0 8px; display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 0 48px; align-items: start; }
 .deeper .main { grid-column: 1; grid-row: 1; max-width: 760px; }
-.reading { grid-column: 2; grid-row: 1; position: sticky; top: 16px; margin-top: 8px; padding: 18px 20px; background: var(--tint); border-top: 3px solid var(--navy); font-size: 15px; line-height: 1.45; display: flex; flex-direction: column; gap: 6px; }
+.reading { grid-column: 2; grid-row: 1; position: sticky; top: calc(var(--head-h) + 16px); margin-top: 8px; padding: 18px 20px; background: var(--tint); border-top: 3px solid var(--navy); font-size: 15px; line-height: 1.45; display: flex; flex-direction: column; gap: 6px; }
 .reading .tag { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--red); }
 .reading .book { font-weight: 600; color: var(--navy); }
 .reading ul { margin: 4px 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px; }
