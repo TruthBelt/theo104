@@ -259,3 +259,15 @@ h3.grp { margin: 28px 0 12px; font-size: 1.2rem; font-weight: 600; color: var(--
 .help-card h3 { margin: 0; font-size: 1.3rem; font-weight: 600; color: var(--navy); }
 .help-card p { margin: 0; color: var(--ink-2); }
 .help-card .btn { align-self: flex-start; margin-top: 12px; display: inline-flex; align-items: center; text-decoration: none; }
+
+/* Essay guide tabs (guide.js): one part at a time; without script every part shows */
+.part-tabs { margin: 0 0 36px; scroll-margin-top: 16px; }
+.part-tabs .deck-list { margin: 0; }
+.no-js .part-tabs { display: none; }
+.js .part { display: none; }
+.js .part.active { display: block; }
+.next-part { margin: 32px 0 0; }
+.next-part a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 18px; border: 1px solid var(--navy); font-size: 16px; font-weight: 600; text-decoration: none; }
+.next-part a:hover { background: var(--tint); }
+.no-js .next-part { display: none; }
+@media (max-width: 640px) { .part-tabs { margin-bottom: 24px; } }

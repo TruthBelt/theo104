@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,600;1,400&amp;display=swap">
-<link rel="stylesheet" href="../../assets/theo104.css?v=2026-10-27g">
+<link rel="stylesheet" href="../../assets/theo104.css?v=2026-10-27h">
 </head>
 <body>
 <header class="site-head">
@@ -23,7 +23,16 @@
 <p>What the essay asks, how to build it, the mistakes that cost points, and one worked example.</p>
 </section>
 
-<section class="block" aria-labelledby="asks-h">
+<nav class="part-tabs" aria-label="Parts of the guide">
+<ul class="deck-list" role="tablist">
+<li><button class="btn" type="button" role="tab" data-part="asks" aria-controls="asks" aria-selected="false">1 · What the Essay Asks</button></li>
+<li><button class="btn" type="button" role="tab" data-part="build" aria-controls="build" aria-selected="false">2 · Paragraph by Paragraph</button></li>
+<li><button class="btn" type="button" role="tab" data-part="mistakes" aria-controls="mistakes" aria-selected="false">3 · Common Mistakes</button></li>
+<li><button class="btn" type="button" role="tab" data-part="worked" aria-controls="worked" aria-selected="false">4 · Worked Example</button></li>
+</ul>
+</nav>
+
+<section class="block part" id="asks" role="tabpanel" aria-labelledby="asks-h">
 <h2 id="asks-h">What the Essay Asks</h2>
 <p class="intro">The essay is worth 125 points. More than half of them (78) come from two parts: the four movements and the worldview paragraph.</p>
 <ol class="asks">
@@ -70,9 +79,10 @@
 <p>The introduction says why the topic matters and states your thesis. The conclusion brings your points together in support of it.</p></li>
 </ol>
 <p class="template">Use the <strong>Biblical Metanarrative Essay Template</strong> in Canvas as your guide.</p>
+<p class="next-part"><a href="#build" data-goto="build">Next: Paragraph by Paragraph →</a></p>
 </section>
 
-<section class="block" aria-labelledby="build-h">
+<section class="block part" id="build" role="tabpanel" aria-labelledby="build-h">
 <h2 id="build-h">Building It, Paragraph by Paragraph</h2>
 <p class="intro">The instructions call for at least seven paragraphs: an introduction, four movement paragraphs, a worldview paragraph, and a conclusion.</p>
 <div class="rows">
@@ -87,12 +97,13 @@
 </ul>
 <p>In each paragraph, pick one passage and explain it rather than listing several in parentheses. Go deep, not wide. Show what links each movement to the next, because the Bible tells one story, not four separate episodes. The video <i>Understanding the Metanarrative</i> walks through all four movements.</p>
 </div></div>
-<div class="row"><h3>The worldview paragraph</h3><div><p>Keep it separate from the four movements. Draw on all four to answer the questions of origin, identity, meaning, morality, and destiny, and write a paragraph, not a questionnaire. The <a href="#worked-h">worked example</a> below shows how.</p></div></div>
+<div class="row"><h3>The worldview paragraph</h3><div><p>Keep it separate from the four movements. Draw on all four to answer the questions of origin, identity, meaning, morality, and destiny, and write a paragraph, not a questionnaire. The <a href="#worked" data-goto="worked">worked example</a> below shows how.</p></div></div>
 <div class="row"><h3>Conclusion</h3><div><p>Bring your points together in support of your thesis. Write the conclusion after the body too. For extra polish, return to why the topic matters.</p></div></div>
 </div>
+<p class="next-part"><a href="#mistakes" data-goto="mistakes">Next: Common Mistakes →</a></p>
 </section>
 
-<section class="block" aria-labelledby="mistakes-h">
+<section class="block part" id="mistakes" role="tabpanel" aria-labelledby="mistakes-h">
 <h2 id="mistakes-h">Common Mistakes</h2>
 <p class="intro">Each of these has cost points on past essays.</p>
 
@@ -121,9 +132,10 @@
 <li><b>Dropped quotations.</b> Introduce every quotation with its source.</li>
 <li><b>Lowercase sacred terms.</b> Capitalize <i>Bible</i>, <i>Scripture</i>, <i>Old Testament</i>, <i>New Testament</i>, <i>Father</i>, <i>Son</i>, and <i>Holy Spirit</i>.</li>
 </ul>
+<p class="next-part"><a href="#worked" data-goto="worked">Next: Worked Example →</a></p>
 </section>
 
-<section class="block" aria-labelledby="worked-h">
+<section class="block part" id="worked" role="tabpanel" aria-labelledby="worked-h">
 <h2 id="worked-h">Worked Example: Tracing One Question</h2>
 <p class="intro">The worldview paragraph works when each answer grows out of the story. Here is the method, applied to one of the five questions. The other four are yours.</p>
 <div class="worked">
@@ -142,5 +154,6 @@
 </main>
 
 <footer class="site-foot"><div class="wrap">THEO 104 · Prof. Kent Maitland</div></footer>
+<script src="../../assets/guide.js?v=2026-10-27h"></script>
 </body>
 </html>
