@@ -114,6 +114,14 @@ a:hover { color: var(--navy-dark); }
 .s-next .q { font-size: max(18px, 2.2cqw); font-weight: 600; color: var(--navy); }
 .s-foot { margin-top: 2.2cqw; display: flex; justify-content: space-between; gap: 12px; font-size: max(13px, 1.25cqw); color: var(--muted); }
 
+/* Photo slides: the photo fills the right side; on a phone it becomes a banner above the text */
+.slide.has-photo { position: relative; overflow: hidden; padding-right: calc(42% + 5cqw); }
+.s-photo { position: absolute; top: 0; right: 0; bottom: 0; width: 42%; margin: 0; }
+.s-photo img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.has-photo .s-row { grid-template-columns: 13cqw minmax(0, 1fr); }
+.has-photo .s-quote { margin: 1.6cqw 0; }
+.has-photo .s-quote blockquote { font-size: max(18px, 2.4cqw); }
+
 @container (max-width: 640px) {
   .slide { aspect-ratio: auto; min-height: 440px; padding: 22px 20px 18px; }
   .s-label { gap: 10px; font-size: 13px; }
@@ -147,6 +155,10 @@ a:hover { color: var(--navy-dark); }
   .s-next .tag { font-size: 12px; }
   .s-next .q { font-size: 18px; }
   .s-foot { margin-top: auto; padding-top: 18px; font-size: 13px; }
+  .slide.has-photo { padding-right: 20px; }
+  .has-photo .s-row { grid-template-columns: 1fr; }
+  .has-photo .s-quote blockquote { font-size: 21px; }
+  .s-photo { position: static; width: auto; height: 190px; margin: -22px -20px 18px; }
 }
 
 /* Going Deeper */
