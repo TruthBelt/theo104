@@ -375,7 +375,11 @@ h2, .viewer, .part-tabs, .part, [id] { scroll-margin-top: var(--head-h); }
 .mod .n { font-size: 15px; font-weight: 600; color: var(--red); }
 .mod .t { font-size: 1.15rem; font-weight: 600; color: var(--navy); }
 .mod .t .d { display: block; margin-top: 2px; font-size: 15px; font-weight: 400; color: var(--muted); }
-.home .hero p + p { margin-top: 12px; font-size: 1.05rem; color: var(--muted); }
+.steps { list-style: none; margin: 28px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; max-width: 960px; counter-reset: step; }
+.steps li { counter-increment: step; padding: 16px 20px 18px; background: var(--tint); border-top: 3px solid var(--navy); font-size: 1.1rem; color: var(--ink-2); }
+.steps li::before { content: counter(step); display: block; margin-bottom: 4px; font-size: 15px; font-weight: 600; color: var(--red); }
+.steps strong { color: var(--navy); font-weight: 600; }
+.home .hero p.after { margin-top: 20px; font-size: 1.05rem; color: var(--muted); }
 .home .block > .intro { max-width: 760px; margin: -8px 0 24px; color: var(--ink-2); }
 .mod .go { font-size: 15px; font-weight: 600; color: var(--navy); white-space: nowrap; }
 a.mod { text-decoration: none; }
@@ -387,4 +391,5 @@ a.mod:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
 @media (max-width: 640px) {
   .mod { grid-template-columns: 1fr; padding: 14px 4px; }
   .guide-cards { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr; gap: 10px; }
 }
