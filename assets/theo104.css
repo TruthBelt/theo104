@@ -344,7 +344,7 @@ h2, .viewer, .part-tabs, .part, [id] { scroll-margin-top: var(--head-h); }
 .ps19 .t { display: block; font-size: max(11px, 1.02cqw); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; line-height: var(--r); position: relative; top: calc(var(--r) / 2 - 0.16cqw - 0.31em); }
 .ps19 .q { margin: 0; font-family: var(--serif); font-style: italic; font-size: max(18px, 2.42cqw); line-height: var(--r); position: relative; top: calc(var(--r) / 2 - 0.16cqw - 0.355em); }
 .ps19 .l { display: block; margin-top: var(--r); font-size: max(13px, 1.33cqw); line-height: var(--r); position: relative; top: calc(var(--r) / 2 - 0.16cqw - 0.355em); color: var(--muted); }
-.ps19-panels > .ps19-sky { color: #FFFFFF; background: radial-gradient(1.5px 1.5px at 18% 22%, #fff 99%, transparent), radial-gradient(1px 1px at 74% 7%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 88% 30%, #fff 99%, transparent), radial-gradient(1px 1px at 22% 74%, #fff 99%, transparent), radial-gradient(1px 1px at 72% 80%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 12% 86%, #fff 99%, transparent), radial-gradient(1px 1px at 58% 54%, #fff 99%, transparent), linear-gradient(180deg, #071A38 0%, #0A254E 55%, #16397A 100%); }
+.ps19-panels > .ps19-sky { color: #FFFFFF; background: radial-gradient(1.5px 1.5px at 18% 22%, #fff 99%, transparent), radial-gradient(1px 1px at 74% 7%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 88% 30%, #fff 99%, transparent), radial-gradient(1px 1px at 22% 74%, #fff 99%, transparent), radial-gradient(1px 1px at 72% 80%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 12% 86%, #fff 99%, transparent), radial-gradient(1px 1px at 58% 54%, #fff 99%, transparent), linear-gradient(180deg, #11171D 0%, #1F2933 55%, #364352 100%); }
 .ps19-sky .t, .ps19-sky .l { color: #C5D3D6; }
 .ps19-sky a { color: #FFFFFF; }
 .ps19-panels > .ps19-page { border-top-color: var(--primary); background: repeating-linear-gradient(180deg, #FFFFFF 0 calc(var(--r) - 1px), #DCE6E7 calc(var(--r) - 1px) var(--r)); }
@@ -358,7 +358,7 @@ h2, .viewer, .part-tabs, .part, [id] { scroll-margin-top: var(--head-h); }
   .ps19 .t { font-size: 12px; }
   .ps19 .q { font-size: 22px; }
   .ps19 .l { font-size: 15px; }
-  .ps19-panels > .ps19-sky { background: radial-gradient(1.5px 1.5px at 93% 16%, #fff 99%, transparent), radial-gradient(1px 1px at 86% 8%, #fff 99%, transparent), radial-gradient(1px 1px at 97% 44%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 90% 88%, #fff 99%, transparent), linear-gradient(180deg, #071A38 0%, #0A254E 55%, #16397A 100%); }
+  .ps19-panels > .ps19-sky { background: radial-gradient(1.5px 1.5px at 93% 16%, #fff 99%, transparent), radial-gradient(1px 1px at 86% 8%, #fff 99%, transparent), radial-gradient(1px 1px at 97% 44%, #fff 99%, transparent), radial-gradient(1.5px 1.5px at 90% 88%, #fff 99%, transparent), linear-gradient(180deg, #11171D 0%, #1F2933 55%, #364352 100%); }
 }
 
 /* Discussion cards on module pages (link to the shared Discussion Guide) */
