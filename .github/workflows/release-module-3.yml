@@ -1,0 +1,64 @@
+# Timed release of the Module 3 page (Decision 108).
+# GitHub Pages cannot schedule a page, so this merges the finished `module-3` branch into `main`
+# at Tue 11/10/2026, 8:00 AM Eastern (13:00 UTC; daylight time ended 11/01). GitHub's timer never
+# fires early but can run late. Run it by hand with dry_run on to test every step but the push.
+name: Release Module 3
+
+on:
+  schedule:
+    - cron: "0 13 10 11 *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Test only: merge and check, but do not push"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency: release-module-3
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Find the staging branch
+        id: branch
+        run: |
+          if git ls-remote --exit-code --heads origin module-3 >/dev/null; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "The module-3 branch is gone, so Module 3 is already released. Nothing to do."
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Merge module-3 into main and check the result
+        if: steps.branch.outputs.present == 'true'
+        run: |
+          git config user.name "Kent Maitland"
+          git config user.email "TruthBelt@users.noreply.github.com"
+          git fetch origin module-3
+          git merge --no-edit origin/module-3
+          test -f module-3/index.html
+          grep -q 'href="module-3/"' index.html
+          git log --oneline -3
+
+      - name: Publish
+        if: steps.branch.outputs.present == 'true' && (github.event_name == 'schedule' || inputs.dry_run == false)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git push origin main
+          gh api -X POST "repos/${{ github.repository }}/pages/builds"
+          git push origin --delete module-3
+
+      - name: Report a dry run
+        if: steps.branch.outputs.present == 'true' && github.event_name == 'workflow_dispatch' && inputs.dry_run != false
+        run: echo "Dry run passed. The merge is clean and the page and home link are in place. Nothing was pushed."
