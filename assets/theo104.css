@@ -420,3 +420,6 @@ a.mod:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .s-quote.long blockquote { font-size: max(18px, 2.5cqw); }
 .s-text.s-cite { margin-top: 1.2cqw; font-size: max(14px, 1.45cqw); }
 @container (max-width: 640px) { .s-quote.long blockquote { font-size: 19px; } .s-text.s-cite { margin-top: 12px; font-size: 15px; } }
+/* Text right after a quotation: the quotation's auto margin can shrink to nothing on a full slide
+   (Module 4 Deck 4 slide 11, 11/10/2026), so keep a minimum gap. Phones already have a fixed 28px margin. */
+@container (min-width: 641px) { .s-quote + .s-text { padding-top: 1.2cqw; } }
