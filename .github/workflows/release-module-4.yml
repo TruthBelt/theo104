@@ -1,0 +1,67 @@
+# Timed release of the Module 4 page (pattern: release-module-3.yml).
+# GitHub Pages cannot schedule a page, so this merges the finished `module-4` branch into `main`
+# at Tue 11/17/2026, 8:07 AM Eastern (13:07 UTC). The minute is off the hour on purpose: GitHub
+# dropped Module 3's top-of-the-hour run entirely on 11/10/2026. GitHub's timer never fires early
+# but can run late or not at all, so a live check at 8:30 AM dispatches this workflow by hand
+# (dry_run false) if the page is still missing. Run it by hand with dry_run on to test every step
+# but the push.
+name: Release Module 4
+
+on:
+  schedule:
+    - cron: "7 13 17 11 *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Test only: merge and check, but do not push"
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency: release-module-4
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Find the staging branch
+        id: branch
+        run: |
+          if git ls-remote --exit-code --heads origin module-4 >/dev/null; then
+            echo "present=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "The module-4 branch is gone, so Module 4 is already released. Nothing to do."
+            echo "present=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Merge module-4 into main and check the result
+        if: steps.branch.outputs.present == 'true'
+        run: |
+          git config user.name "Kent Maitland"
+          git config user.email "TruthBelt@users.noreply.github.com"
+          git fetch origin module-4
+          git merge --no-edit origin/module-4
+          test -f module-4/index.html
+          grep -q 'href="module-4/"' index.html
+          git log --oneline -3
+
+      - name: Publish
+        if: steps.branch.outputs.present == 'true' && (github.event_name == 'schedule' || inputs.dry_run == false)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git push origin main
+          gh api -X POST "repos/${{ github.repository }}/pages/builds"
+          git push origin --delete module-4
+
+      - name: Report a dry run
+        if: steps.branch.outputs.present == 'true' && github.event_name == 'workflow_dispatch' && inputs.dry_run != false
+        run: echo "Dry run passed. The merge is clean and the page and home link are in place. Nothing was pushed."
