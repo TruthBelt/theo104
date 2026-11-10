@@ -393,3 +393,30 @@ a.mod:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
   .guide-cards { grid-template-columns: 1fr; }
   .steps { grid-template-columns: 1fr; gap: 10px; }
 }
+
+/* Module 3 slides: several quotations on one slide; the humiliation-and-exaltation arc (Decision 116).
+   The arc is an SVG at slide width; under 640 px it gives way to a plain list. */
+.s-mid.quotes { gap: 2.6cqw; }
+.s-mid .s-quote { margin: 0; }
+.slide.arc .arc-wrap { flex: 1; min-height: 0; display: flex; align-items: center; margin-top: 1.4cqw; }
+.arc-svg { display: block; width: 100%; height: auto; max-height: 100%; overflow: visible; }
+.arc-line { fill: none; stroke: var(--primary); stroke-width: 3; stroke-linejoin: round; }
+.arc-pt { fill: var(--bg); stroke: var(--primary); stroke-width: 3; }
+.arc-halo { fill: none; stroke: var(--bg); stroke-width: 15; stroke-linecap: round; }
+.arc-cross { fill: none; stroke: var(--accent); stroke-width: 5; }
+.arc-t { font-family: var(--sans); font-size: 21px; font-weight: 600; fill: var(--primary); }
+.arc-t.low { fill: var(--accent); }
+.arc-grp { font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 0.08em; fill: var(--accent); }
+.arc-list { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+@container (max-width: 640px) {
+  .s-mid.quotes { gap: 20px; }
+  .slide.arc .arc-wrap { display: block; margin-top: 16px; }
+  .arc-svg { display: none; }
+  .arc-list { position: static; width: auto; height: auto; overflow: visible; clip: auto; list-style: none; margin: 0; padding: 0; border-left: 3px solid var(--primary); }
+  .arc-list li { padding: 5px 0 5px 16px; font-weight: 600; color: var(--primary); }
+  .arc-list li.low { color: var(--accent); }
+  .arc-tag { display: block; margin: 8px 0 2px; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); }
+}
+.s-quote.long blockquote { font-size: max(18px, 2.5cqw); }
+.s-text.s-cite { margin-top: 1.2cqw; font-size: max(14px, 1.45cqw); }
+@container (max-width: 640px) { .s-quote.long blockquote { font-size: 19px; } .s-text.s-cite { margin-top: 12px; font-size: 15px; } }
