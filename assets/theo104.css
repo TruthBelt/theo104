@@ -420,6 +420,18 @@ a.mod:focus-visible { outline: 3px solid var(--primary); outline-offset: 2px; }
 .s-quote.long blockquote { font-size: max(18px, 2.5cqw); }
 .s-text.s-cite { margin-top: 1.2cqw; font-size: max(14px, 1.45cqw); }
 @container (max-width: 640px) { .s-quote.long blockquote { font-size: 19px; } .s-text.s-cite { margin-top: 12px; font-size: 15px; } }
-/* Text right after a quotation: the quotation's auto margin can shrink to nothing on a full slide
-   (Module 4 Deck 4 slide 11, 11/10/2026), so keep a minimum gap. Phones already have a fixed 28px margin. */
-@container (min-width: 641px) { .s-quote + .s-text { padding-top: 1.2cqw; } }
+/* Whatever follows a quotation keeps clear of its attribution, so the attribution reads with the quotation
+   above it, not the line below (Kent, 11/24/2026). The quotation's auto margin can shrink to nothing on a
+   full slide (Module 4 Deck 4 slide 11, 11/10/2026), and a group of quotations had no gap at all after it.
+   3cqw is about twice the space between a quotation and its attribution. A citation line (.s-cite) stays close,
+   since it belongs to the quotation. Phones already have fixed margins. */
+@container (min-width: 641px) {
+  .s-quote + :is(.s-text:not(.s-cite), .s-end, .s-rows, .s-mid),
+  .s-mid.quotes + :is(.s-text, .s-end, .s-rows, .s-mid) { padding-top: 3cqw; }
+  .s-quote + .s-text.s-cite { padding-top: 1.2cqw; }
+  /* Photo slides: the quotation keeps a 1.6cqw margin, so add less. Rows there open with their own rule line,
+     which already separates them, and Module 2 Deck 4 slide 2 has no room to spare. */
+  .has-photo .s-quote + :is(.s-text:not(.s-cite), .s-end, .s-mid) { padding-top: 1.4cqw; }
+  .has-photo .s-quote + .s-rows { padding-top: 0; }
+  .s-mid.quotes { gap: 3cqw; }
+}
